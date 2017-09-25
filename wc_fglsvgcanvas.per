@@ -1,0 +1,46 @@
+# FOURJS_START_COPYRIGHT(P,2017)
+# Property of Four Js*
+# (c) Copyright Four Js 2017, 2017. All Rights Reserved.
+# * Trademark of Four Js Development Tools Europe Ltd
+#   in the United States and elsewhere
+# FOURJS_END_COPYRIGHT
+
+LAYOUT (TEXT="Inline HTML SVG Web Component Sample")
+GRID
+{
+<GROUP g1                                                              >
+[cb1] [cb2] [cb3]
+ Selected Shape [f1                                                    ]
+ Change Style   [f2                                                    ]
+<                                                                      >
+<GROUP g2                                                              >
+[cv                                                                    ]
+[                                                                      ]
+[                                                                      ]
+[                                                                      ]
+[                                                                      ]
+[                                                                      ]
+[                                                                      ]
+[                                                                      ]
+<                                                                      >
+}
+END--GRID
+END--LAYOUT
+
+ATTRIBUTES
+
+GROUP g1:group1, TEXT="Options";
+GROUP g2:group2, TEXT="Drawing";
+CHECKBOX cb1 = formonly.big_yn, REQUIRED, TEXT="Big", NOT NULL;
+CHECKBOX cb2 = formonly.medium_yn, REQUIRED, TEXT="Medium", NOT NULL;
+CHECKBOX cb3 = formonly.small_yn, REQUIRED, TEXT="Small", NOT NULL;
+LABEL f1 = formonly.selected_shape;
+COMBOBOX f2 = formonly.change_style, ITEMS=(("style_1","lime, purple, yellow"),("style_2","red, orange, green"));
+WEBCOMPONENT cv=FORMONLY.canvas,
+   COMPONENTTYPE="fglsvgcanvas",
+   PROPERTIES=(selection="svg_selection"),
+   SIZEPOLICY=FIXED,
+   STRETCH=BOTH,
+   SCROLLBARS=NONE,
+   HEIGHT=25, WIDTH=50;
+END--ATTRIBUTES
