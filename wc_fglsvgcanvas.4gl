@@ -82,6 +82,19 @@ MAIN
 
 END MAIN
 
+#+ Set a different style to the current SVG drawing
+#+
+#+ This function sets CSS classes based on a Style that can be selected via a combobox form field
+#+
+#+ @code
+#+ DEFINE change_style STRING
+#+ CALL set_style(change_style)
+#+
+#+ @param change_style current selected style
+#+
+#+ @returnType none
+#+ @return none
+#+
 FUNCTION set_style(current_style)
 
   DEFINE current_style STRING
@@ -120,6 +133,19 @@ FUNCTION set_style(current_style)
 
 END FUNCTION--set_style
 
+#+ Draws 3 random ellipses
+#+
+#+ Sample only, based on a W3C example
+#+ No IN/OUT parameters, all based off module variables
+#+
+#+ @code
+#+ CALL draw_ellipses()
+#+
+#+ @param none
+#+
+#+ @returnType none
+#+ @return none
+#+
 FUNCTION draw_ellipses()
 
  # Create group and apply some decoration to all objects in group
@@ -165,7 +191,18 @@ FUNCTION draw_ellipses()
   
 END FUNCTION--draw_ellipses
 
-
+#+ Redraw SVG object
+#+
+#+ No IN/OUT parameters, all based off module variables
+#+
+#+ @code
+#+ CALL redraw()
+#+
+#+ @param none
+#+
+#+ @returnType none
+#+ @return none
+#+
 FUNCTION redraw()
 
   CALL fglsvgcanvas.clean(cid)
